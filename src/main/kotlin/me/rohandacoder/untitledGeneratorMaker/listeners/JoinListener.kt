@@ -9,13 +9,15 @@ class JoinListener(private val plugin: UntitledGeneratorMaker) : Listener {
 
     @EventHandler
     fun onJoin(event: PlayerJoinEvent) {
-        plugin.logger.info("JOIN")
+        plugin.logger.info("Player joined: ${event.player.name}")
         val player = event.player
-        plugin.server.scheduler.runTaskLater(plugin, Runnable {
-            if (player.isOnline) {
-                player.sendRichMessage("<green>Welcome, ${player.name}!")
-            }
-        }, 40L)
 
+        plugin.server.scheduler.runTaskLater(plugin, Runnable {
+            if (!player.isOnline) return@Runnable
+
+            player.sendRichMessage("<green>Welcome, ${player.name}!")
+
+            SpawnCommand.teleportToSpawn(plugin, player)
+        }, 40L)  // 2 seconds delay
     }
 }
