@@ -1,0 +1,11 @@
+spawn:
+  world: "world"
+  x: 0
+  y: 50
+  z: 0
+  pitch: 90
+  yaw: 0
+
+messages:
+  reload: "<green>Configuration reloaded successfully!"
+  spawn: "<yellow>Teleported to Spawn!"
