@@ -1,6 +1,5 @@
 package me.rohandacoder.untitledGeneratorMaker.commands
 
-import dev.rollczi.litecommands.annotations.argument.Arg
 import dev.rollczi.litecommands.annotations.command.Command
 import dev.rollczi.litecommands.annotations.context.Sender
 import dev.rollczi.litecommands.annotations.execute.Execute
