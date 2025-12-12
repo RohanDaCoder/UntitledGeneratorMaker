@@ -1,5 +1,5 @@
 name: untitled-generator-maker
-version: '1.0-SNAPSHOT'
+version: '1.1-SNAPSHOT'
 main: me.rohandacoder.untitledGeneratorMaker.UntitledGeneratorMaker
 description: use /ugm to learn more.
 author: RohanDaCoder
