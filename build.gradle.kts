@@ -52,3 +52,6 @@ tasks.shadowJar {
     archiveFileName.set("untitled-generator-maker.jar")
     destinationDirectory.set(file("C:/Users/User/Documents/MC SERVER/plugins"))
 }
+tasks.compileJava {
+    options.compilerArgs.add("-parameters")
+}
