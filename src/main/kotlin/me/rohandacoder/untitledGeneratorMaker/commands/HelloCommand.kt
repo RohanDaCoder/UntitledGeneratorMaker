@@ -12,12 +12,9 @@ class HelloCommand {
     @Execute
     fun executeHello(
         @Sender sender: CommandSender,
-        @Arg("amount?") amount: Int = 1,
     ) {
         // Execute the /hello
-        repeat(amount.coerceAtMost(5)) {
-            sender.sendRichMessage("<green>Hello, ${sender.name}")
-        }
+        sender.sendRichMessage("<green>Hello, ${sender.name}")
     }
 
 }
