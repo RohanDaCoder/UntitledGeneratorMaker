@@ -10,7 +10,7 @@ import org.bukkit.command.CommandSender
 @Command(name = "ugm")
 @Suppress("UNUSED")
 class UgmCommand(private val plugin: UntitledGeneratorMaker) {
-    @Execute()
+    @Execute
     @Suppress("UNUSED")
     fun execute(@Sender sender: CommandSender) {
         sender.sendRichMessage("<dark_gray>==================================================")
