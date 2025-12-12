@@ -3,4 +3,5 @@ version: '1.0-SNAPSHOT'
 main: me.rohandacoder.untitledGeneratorMaker.UntitledGeneratorMaker
 description: Untitled Generator Maker
 author: RohanDaCoder
+website: https://github.com/RohanDaCoder/UntitledGeneratorMaker
 api-version: '1.21'
