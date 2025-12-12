@@ -1,7 +1,9 @@
 name: untitled-generator-maker
 version: '1.0-SNAPSHOT'
 main: me.rohandacoder.untitledGeneratorMaker.UntitledGeneratorMaker
-description: Untitled Generator Maker
+description: use /ugm to learn more.
 author: RohanDaCoder
 website: https://github.com/RohanDaCoder/UntitledGeneratorMaker
 api-version: '1.21.10'
+softdepend:
+  - Essentials
