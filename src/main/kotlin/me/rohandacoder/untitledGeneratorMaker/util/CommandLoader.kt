@@ -11,7 +11,6 @@ class CommandLoader(private val plugin: UntitledGeneratorMaker) {
     private var liteCommands: LiteCommands<CommandSender>? = null
 
     fun loadCommands() {
-        plugin.logger.info("Loading commands...")
         liteCommands = LiteBukkitFactory.builder(plugin)
             .commands(PingCommand(), HelloCommand())
             .invalidUsage(InvalidUsageHandler())
