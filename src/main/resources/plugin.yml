@@ -1,0 +1,6 @@
+name: untitled-generator-maker
+version: '1.0-SNAPSHOT'
+main: me.rohandacoder.untitledGeneratorMaker.UntitledGeneratorMaker
+description: Untitled Generator Maker
+author: RohanDaCoder
+api-version: '1.21'
