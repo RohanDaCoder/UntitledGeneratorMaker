@@ -8,13 +8,20 @@ import me.rohandacoder.untitledGeneratorMaker.commands.PingCommand
 import org.bukkit.command.CommandSender
 
 class CommandLoader(private val plugin: UntitledGeneratorMaker) {
-    private lateinit var liteCommands: LiteCommands<CommandSender>
+    private var liteCommands: LiteCommands<CommandSender>? = null
 
     fun loadCommands() {
         plugin.logger.info("Loading commands...")
         liteCommands = LiteBukkitFactory.builder(plugin)
             .commands(PingCommand(), HelloCommand())
+            .invalidUsage(InvalidUsageHandler())
             .build()
         plugin.logger.info("Loaded commands.")
+    }
+
+    fun unloadCommands() {
+        liteCommands?.unregister()
+        liteCommands = null
+        plugin.logger.info("Unloaded commands.")
     }
 }

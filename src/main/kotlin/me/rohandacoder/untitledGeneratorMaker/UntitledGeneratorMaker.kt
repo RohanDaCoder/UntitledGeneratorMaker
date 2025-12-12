@@ -11,6 +11,7 @@ class UntitledGeneratorMaker : JavaPlugin() {
     }
 
     override fun onDisable() {
+        CommandLoader(this).unloadCommands()
         logger.info("UntitledGeneratorMaker disabled!")
     }
 }
