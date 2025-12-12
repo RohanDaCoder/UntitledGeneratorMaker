@@ -12,10 +12,12 @@ repositories {
     maven("https://repo.papermc.io/repository/maven-public/") {
         name = "papermc-repo"
     }
+    maven("https://repo.panda-lang.org/releases")
 }
 
 dependencies {
     compileOnly("io.papermc.paper:paper-api:1.21.10-R0.1-SNAPSHOT")
+    implementation("dev.rollczi:litecommands-bukkit:3.10.6")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 }
 

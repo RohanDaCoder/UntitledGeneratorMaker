@@ -1,16 +1,16 @@
 package me.rohandacoder.untitledGeneratorMaker
 
+import me.rohandacoder.untitledGeneratorMaker.util.CommandLoader
 import org.bukkit.plugin.java.JavaPlugin
 
 class UntitledGeneratorMaker : JavaPlugin() {
 
     override fun onEnable() {
-        // Plugin startup logic
-        logger.info("Enabled!")
+        CommandLoader(this).loadCommands()
+        logger.info("UntitledGeneratorMaker enabled!")
     }
 
     override fun onDisable() {
-        // Plugin shutdown logic
-        logger.info("Disabling")
+        logger.info("UntitledGeneratorMaker disabled!")
     }
 }
