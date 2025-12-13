@@ -41,8 +41,17 @@ tasks.processResources {
 }
 
 tasks.shadowJar {
-    archiveFileName.set("untitled-generator-maker.jar")
-    destinationDirectory.set(file("C:/Users/User/Documents/MC SERVER/plugins"))
+    archiveFileName.set("untitled-generator-maker-$version.jar")
+
+    if (System.getenv("build_environment") == "ci") {
+        // CI/CD environment - output to build/libs/ for standard artifact collection
+        print("CI/CD environment detected!\n")
+        destinationDirectory.set(layout.buildDirectory.dir("libs"))
+    } else {
+        // Local development - output to your Minecraft server directory
+        print("Local environment detected!\n")
+        destinationDirectory.set(file("C:/Users/User/Documents/MC SERVER/plugins"))
+    }
 }
 tasks.compileJava {
     options.compilerArgs.add("-parameters")
