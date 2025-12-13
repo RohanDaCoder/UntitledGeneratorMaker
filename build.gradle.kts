@@ -19,6 +19,7 @@ dependencies {
     compileOnly("io.papermc.paper:paper-api:1.21.10-R0.1-SNAPSHOT")
     implementation("dev.rollczi:litecommands-bukkit:3.10.6")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+    implementation("com.jeff-media:custom-block-data:2.2.4")
 }
 
 tasks {
