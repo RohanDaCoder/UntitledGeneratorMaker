@@ -34,8 +34,8 @@ jobs:
         build_environment: ci
 
     - name: Upload built JAR
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v6
       with:
-        name: Plugin-JAR
+        name: Plugin-JAR.jar
         path: build/libs/untitled-generator-maker*.jar
         if-no-files-found: error
