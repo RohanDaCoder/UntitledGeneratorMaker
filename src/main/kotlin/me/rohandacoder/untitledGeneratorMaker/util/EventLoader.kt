@@ -1,6 +1,7 @@
 package me.rohandacoder.untitledGeneratorMaker.util
 
 import me.rohandacoder.untitledGeneratorMaker.UntitledGeneratorMaker
+import me.rohandacoder.untitledGeneratorMaker.listeners.BlockBreakListener
 import me.rohandacoder.untitledGeneratorMaker.listeners.JoinListener
 import org.bukkit.Bukkit
 import org.bukkit.event.HandlerList
@@ -12,6 +13,7 @@ class EventLoader(private val plugin: UntitledGeneratorMaker) {
 
     fun loadEvents() {
         register(JoinListener(plugin))
+        register(BlockBreakListener(plugin))
         plugin.logger.info("Registered listeners.")
     }
 
