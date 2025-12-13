@@ -10,8 +10,6 @@ on:
       - '.run/**'      # Ignore IDE run configurations
       - 'LICENSE'      # Ignore license file
       - 'README.md'    # Ignore README changes
-      - '**/*.yml'     # Ignore yaml files
-      - '!/.github/workflows/artifact.yml'  # Still run if this workflow changes
 jobs:
   build:
     runs-on: ubuntu-latest
