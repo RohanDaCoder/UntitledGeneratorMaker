@@ -3,9 +3,15 @@ name: Build Project
 on:
   push:
     branches: [ main, master ]
-  pull_request:
-    branches: [ main, master ]
-
+    paths-ignore:
+      - '**/*.md'      # Ignore markdown files (documentation)
+      - '**/*.txt'     # Ignore text files
+      - '.gitignore'   # Ignore git config files
+      - '.run/**'      # Ignore IDE run configurations
+      - 'LICENSE'      # Ignore license file
+      - 'README.md'    # Ignore README changes
+      - '**/*.yml'     # Ignore yaml files
+      - '!/.github/workflows/artifact.yml'  # Still run if this workflow changes
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -33,9 +39,16 @@ jobs:
       env:
         build_environment: ci
 
+    - name: Get JAR filename
+      id: get_jar
+      run: |
+        JAR_FILE=$(find build/libs -name "untitled-generator-maker*.jar" | head -n 1 | xargs basename)
+        echo "filename=$JAR_FILE" >> $GITHUB_OUTPUT
+      shell: bash
+
     - name: Upload built JAR
       uses: actions/upload-artifact@v6
       with:
-        name: Plugin-JAR.jar
+        name: ${{ steps.get_jar.outputs.filename }}
         path: build/libs/untitled-generator-maker*.jar
         if-no-files-found: error
